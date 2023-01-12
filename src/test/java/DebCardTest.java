@@ -36,7 +36,7 @@ public class DebCardTest {
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.get("http://localhost:9999");
     }
 
