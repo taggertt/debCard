@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,13 +16,13 @@ public class DebCardTest {
 
     @BeforeAll
     static void setUpAll() {
-       // WebDriverManager.chromedriver().setup();
-        if (System.getProperty("os.name").contains("Linux")) {
-                    System.setProperty("webdriver.chrome.driver", "driver/chromedriver_linux64/chromedriver");
-                    
-                } else {
-                    System.setProperty("webdriver.chrome.driver", "driver/chromedriver_win32/chromedriver.exe");
-                }
+       WebDriverManager.chromedriver().setup();
+      //if (System.getProperty("os.name").contains("Linux")) {
+      //            System.setProperty("webdriver.chrome.driver", "driver/chromedriver_linux64/chromedriver");
+      //
+      //        } else {
+      //            System.setProperty("webdriver.chrome.driver", "driver/chromedriver_win32/chromedriver.exe");
+      //        }
     }
 
     @BeforeEach
@@ -40,9 +41,10 @@ public class DebCardTest {
     }
 
     @AfterEach
-    void tearDown() {
-        driver.quit();
-        driver = null;
+        void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @Test
