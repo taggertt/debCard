@@ -19,6 +19,7 @@ public class DebCardTest {
        // WebDriverManager.chromedriver().setup();
         if (System.getProperty("os.name").contains("Linux")) {
                     System.setProperty("webdriver.chrome.driver", "driver/chromedriver_linux64/chromedriver");
+                    
                 } else {
                     System.setProperty("webdriver.chrome.driver", "driver/chromedriver_win32/chromedriver.exe");
                 }
