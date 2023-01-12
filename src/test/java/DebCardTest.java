@@ -17,7 +17,7 @@ public class DebCardTest {
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().driverVersion(WebDriverManager.chromedriver().getDownloadedDriverVersion());
+        WebDriverManager.chromedriver().driverVersion("109");
         WebDriverManager.chromedriver().setup();
         //System.setProperty("webdriver.chrome.driver","driver/chromedriver_win32/chromedriver.exe");
     }
