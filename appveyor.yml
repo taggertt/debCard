@@ -15,3 +15,4 @@ build_script:
   - ./gradlew test --info
   - chmod +x gradlew
   - chmod +x chromedriver
+  - chmod 775 chromedriver
