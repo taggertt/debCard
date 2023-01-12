@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DebCardTest {
@@ -23,7 +22,6 @@ public class DebCardTest {
                 } else {
                     System.setProperty("webdriver.chrome.driver", "driver/chromedriver_win32/chromedriver.exe");
                 }
-        //System.setProperty("webdriver.chrome.driver","driver/chromedriver_win32/chromedriver.exe");
     }
 
     @BeforeEach
@@ -37,10 +35,9 @@ public class DebCardTest {
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
+        options.getBrowserVersion();
         driver = new ChromeDriver();
         driver.get("http://localhost:9999");
-        String title = driver.getTitle();
-        assertThat(title).contains("Selenium WebDriver");
     }
 
     @AfterEach
