@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DebCardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-11T16:16:05" hostname="BOR_HOME" time="3.239">
+<testsuite name="DebCardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-12T13:07:55" hostname="BOR_HOME" time="4.711">
   <properties/>
-  <testcase name="shouldSuccessSendRequest()" classname="DebCardTest" time="3.239"/>
+  <testcase name="shouldSuccessSendRequest()" classname="DebCardTest" time="4.711"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+  <system-err><![CDATA[SLF4J: No SLF4J providers were found.
 SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 57925
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 57459
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-янв 11, 2023 10:16:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+янв 12, 2023 7:07:57 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected upstream dialect: W3C
-янв 11, 2023 10:16:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+янв 12, 2023 7:07:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 109, so returning the closest version found: 106
-янв 11, 2023 10:16:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+янв 12, 2023 7:07:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found CDP implementation for version 109 of 106
 ]]></system-err>
 </testsuite>

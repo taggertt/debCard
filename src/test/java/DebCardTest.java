@@ -1,4 +1,5 @@
-//import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,17 +17,25 @@ public class DebCardTest {
 
     @BeforeAll
     static void setUpAll() {
-        //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver","driver/chromedriver_win32/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
+        //System.setProperty("webdriver.chrome.driver","driver/chromedriver_win32/chromedriver.exe");
     }
 
     @BeforeEach
     void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("start-maximized"); // open Browser in maximized mode
+        options.addArguments("disable-infobars"); // disabling infobars
+        options.addArguments("--disable-extensions"); // disabling extensions
+        options.addArguments("--disable-gpu"); // applicable to windows os only
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver();
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        String title = driver.getTitle();
+        assertThat(title).contains("Selenium WebDriver");
     }
 
     @AfterEach
