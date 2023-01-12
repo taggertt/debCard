@@ -1,5 +1,4 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DebCardTest {
@@ -17,6 +17,7 @@ public class DebCardTest {
 
     @BeforeAll
     static void setUpAll() {
+        WebDriverManager.chromedriver().driverVersion(WebDriverManager.chromedriver().getDownloadedDriverVersion());
         WebDriverManager.chromedriver().setup();
         //System.setProperty("webdriver.chrome.driver","driver/chromedriver_win32/chromedriver.exe");
     }
