@@ -17,23 +17,17 @@ public class DebCardTest {
     @BeforeAll
     static void setUpAll() {
        WebDriverManager.chromedriver().setup();
-      //if (System.getProperty("os.name").contains("Linux")) {
-      //            System.setProperty("webdriver.chrome.driver", "driver/chromedriver_linux64/chromedriver");
-      //
-      //        } else {
-      //            System.setProperty("webdriver.chrome.driver", "driver/chromedriver_win32/chromedriver.exe");
-      //        }
     }
 
     @BeforeEach
     void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized"); // open Browser in maximized mode
-        options.addArguments("disable-infobars"); // disabling infobars
-        options.addArguments("--disable-extensions"); // disabling extensions
-        options.addArguments("--disable-gpu"); // applicable to windows os only
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--no-sandbox"); // Bypass OS security model
+        options.addArguments("start-maximized");
+        options.addArguments("disable-infobars");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
@@ -49,13 +43,12 @@ public class DebCardTest {
 
     @Test
     void shouldSuccessSendRequest() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[type=\"text\"]")).sendKeys("Илья");
         driver.findElement(By.cssSelector("[type=\"tel\"]")).sendKeys("+79128090324");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button__text")).click();
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-        String actual = driver.findElement(By.className("Success_successBlock__2L3Cw")).getText();
+        String actual = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
         assertEquals(expected, actual.trim());
     }
 }

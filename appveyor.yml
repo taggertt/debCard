@@ -10,9 +10,7 @@ build: off
 
 install:
   - java -jar ./artifacts/app-order.jar &
-  - chmod 755 ./driver/chromedriver_linux64/chromedriver
   - chmod +x gradlew
-  - chmod +x driver/chromedriver_linux64/chromedriver
 
 build_script:
 
